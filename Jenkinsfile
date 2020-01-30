@@ -44,7 +44,7 @@ pipeline{
                         echo 'Production Deployment'
 
                     }
-                input 'PROD DEPLOY'
+                input 'PODAJ LOGIN TWARDZIELU'
                 }
                 chuckNorris() 
             }
