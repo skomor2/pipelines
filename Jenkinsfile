@@ -44,6 +44,7 @@ pipeline{
                         echo 'Production Deployment'
 
                     }
+                input 'PROD DEPLOY'
                 }
                 chuckNorris() 
             }
