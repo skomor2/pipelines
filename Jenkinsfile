@@ -20,7 +20,7 @@ pipeline{
                         sh './gradlew build'
                      }
                   jacoco exclusionPattern: '*Spec.class', execPattern: 'build/jacoco'
-                  publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'build/reports/test/test', reportFiles: '', reportName: 'HTML Report', reportTitles: ''])
+                  publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'build/reports/tests/test', reportFiles: '', reportName: 'HTML Report', reportTitles: ''])
                  }
             }
         }
