@@ -23,7 +23,7 @@ pipeline{
                      ansiColor('xterm') { 
                         sh './gradlew build'
                      }
-                  jacoco exclusionPattern: '*Spec.class', execPattern: 'build/jacoco'
+                  jacoco exclusionPattern: '*Spec.class', execPattern: 'build/jacoco/test.exec'
                   publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'build/reports/tests/test', reportFiles: '', reportName: 'HTML Report', reportTitles: ''])
                  
 
