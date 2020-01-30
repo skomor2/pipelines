@@ -10,6 +10,7 @@ pipeline{
                         }
                     git 'https://github.com/kamilszymanski/greeting-demo-app'
                     }
+                chuckNorris()    
                 }
             }
         }
@@ -22,6 +23,7 @@ pipeline{
                   jacoco exclusionPattern: '*Spec.class', execPattern: 'build/jacoco'
                   publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'build/reports/tests/test', reportFiles: '', reportName: 'HTML Report', reportTitles: ''])
                  }
+                chuckNorris() 
             }
         }
         stage("C") { 
@@ -32,6 +34,18 @@ pipeline{
                         sh 'sleep $((1 + RANDOM % 10))'
                     }
                 }
+                chuckNorris() 
+            }
+        }
+        stage("D") { 
+            steps {
+                timestamps { 
+                    ansiColor('xterm') { 
+                        echo 'Production Deployment'
+
+                    }
+                }
+                chuckNorris() 
             }
         }
     }
