@@ -31,11 +31,32 @@ pipeline{
         }
         stage("C") { 
             steps {
- 
-                    ansiColor('xterm') { 
-                        echo 'Testy Security'
-                        sh 'sleep $((1 + RANDOM % 10))'
-                    }
+                    parallel(
+                         c1 : {
+                            ansiColor('xterm') { 
+                                echo 'Testy Security'
+                                sh 'sleep $((1 + RANDOM % 10))'
+                             }
+                         },
+                         c2 : {
+                            ansiColor('xterm') { 
+                                echo 'Testy Security'
+                                sh 'sleep $((1 + RANDOM % 20))'
+                             }
+                         },
+                         c3 : {
+                            ansiColor('xterm') { 
+                                echo 'Testy Security'
+                                sh 'sleep $((1 + RANDOM % 30))'
+                             }
+                         },
+                         c4 : {
+                            ansiColor('xterm') { 
+                                echo 'Testy Security'
+                                sh 'sleep $((1 + RANDOM % 40))'
+                             }
+                         }
+                    )
                 
 
             }
